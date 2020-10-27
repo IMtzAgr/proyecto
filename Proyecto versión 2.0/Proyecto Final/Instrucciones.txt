@@ -1,0 +1,35 @@
+
+
+Fase 1 del proyecto de Ensambladores: 
+		Enrique Juárez
+		Iván Martínez
+
+
+
+La carpeta dist, contiene el archivo ejecutable:
+	
+	Abrir la carpeta y el Archivo ejecutable tiene nombre de LeerArchivo y tiene una extensión .jar
+
+Para abrir el programa, es necesario tener instalado NetBeans, el proyecto fue realizado con la versión 8.2
+	
+	Ejecutar el IDE de Netbeans:
+
+		Dar click en archivo
+		Buscar la opción de abrir proyecto.
+		Dar click en "Abrir proyecto" o bien se puede usar la combinación de teclas Ctrl + Mayus + O
+		Buscar la ruta en dónde se encuentra el proyecto
+		El proyecto se observará con un ícono de una taza de café
+		Una vez seleccionado, dar clic en abrir proyecto.
+		Atomáticamente abrirá el proyecto.
+
+	Se puede ejecutar inmediatamente o bien revisar el código fuente por partes
+	
+		Para ello, desplegar la subcarpeta "Paquete de fuentes"	
+		Mostrará dos subcarpetas: "Proyecto" y "leerarchivo"
+		Abrir la carpeta proyecto:
+
+			En ella encontrará los códigos e interfaces que fueron creadas:
+
+				Para la ejecución del proyecto es necesario identificar "VentanaPrincipal.java"
+				Dar click derecho sobre éste
+				Buscar la opción de ejecutar archivo y dar click en ella.

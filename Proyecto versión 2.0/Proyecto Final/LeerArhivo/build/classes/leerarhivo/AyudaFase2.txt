@@ -1,0 +1,18 @@
+	Proyecto Fase 2. Análisis sintáctico y semántico del segmento de código
+
+La Fase 2 del proyecto cubre la fase del análisis sintáctico y semántico del segmento de código, es decir, 
+analizar los elementos que integran las líneas del programa fuente que se encuentran en la definición del 
+segmento de código para verificar que son los correctos y que están en el orden correcto, conforme a la sintaxis
+de cada instrucción asignada a su proyecto, las cuales pueden ser consultadas en la ayuda 
+del emu8086 versión 4.08. En términos generales se debe considerar:
+
+	Continuar el llenado de la tabla de símbolos con los campos de símbolo y tipo para las etiquetas.
+	Que el número de elementos sea correcto.
+	Que los elementos sean correctos.
+	Que los argumentos sean del mismo tamaño (cuando la instrucción así lo requiera).
+	Las etiquetas utilizadas como operandos en las instrucciones de transferencia deben definirse previamente.
+
+Esta fase del proyecto debe cubrir la característica de desplegar la línea del programa fuente analizada y
+frente a ella el resultado de la verificación con la frase Correcta o Incorrecta, según sea el caso, 
+así como mostrar la tabla de símbolos. Para el caso en que la línea sea incorrecta, se deberá desplegar
+adicionalmente la causa del error.

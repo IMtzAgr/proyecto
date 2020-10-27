@@ -1,0 +1,29 @@
+; ---------------------------------------------
+; Programa que imprime un string en la pantalla
+; ---------------------------------------------
+        .model small               ; modelo de memoria
+        stack segment                    ; segmento del stack
+		dw 256 dup('0')
+	ends
+        data segment                     ; segmento de datos
+        Cadena1 DB 'Hola Mundo.$'  ; string a imprimir (finalizado en $)
+	ends
+        code segment                     ; segmento del c?digo
+ 
+; ---------------------------------------------
+; Inicio del programa
+; ---------------------------------------------
+        programa:
+		; ingresa tus instrucciones sin operandos aqui
+		;correcta y con error
+                MOV AX, @data           ; carga en AX la direcci?n del segmento de datos
+                MOV DS, AX              ; mueve la direcci?n al registro de segmento por medio de AX
+                MOV DX, offset Cadena1  ; mueve a DX la direcci?n del string a imprimir
+		;ingresa tus instrucciones de un operando o de transferencia aqui
+		;correcta y con error
+                MOV AH, 9               ; AH = c?digo de la funci?n del MS DOS para imprimir un string en la pantalla
+                INT 21h                 ; llamada al MS DOS para imprimir un string en la pantalla
+		;ingresa tus instrucciones de dos operandos aqui
+		;correcta y con error
+                INT 20h                 ; llamada al MS DOS para finalizar el programa
+        end programa

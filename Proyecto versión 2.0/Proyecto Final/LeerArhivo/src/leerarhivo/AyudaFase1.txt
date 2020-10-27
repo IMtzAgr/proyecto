@@ -1,0 +1,79 @@
+
+Proyecto Fase 1. 
+	Análisis lexicográfico del programa completo, análisis sintáctico y semántico de
+				los segmentos de datos y de pila.
+
+
+A) Separación de elementos
+
+	1. Preguntar el archivo con el programa fuente a traducir (.ens).
+	2. Validar la existencia del archivo sin restricciones de ubicación.
+	3. Abrirlo para lectura sin restricciones de ubicación.
+	4. Desplegar el archivo.
+	5. Leer y separar elementos.
+	6. Desplegar los elementos encontrados en pantalla en forma de lista (el despliegue debe ser capaz de mostrar página por página la lista de elementos).
+
+B) Identificación de elementos
+
+	7. En esta parte se contempla el análisis lexicográfico del programa fuente, es decir, identificar todos y cada uno de los elementos del programa fuente como 
+	elementos válidos del lenguaje (pseudoinstrucción, instrucción, registro, símbolo, constante [numérica decimal, numérica hexadecimal, numérica binaria, caracter]). 
+	Se debe cubrir la característica de desplegar frente a cada elemento de la lista (resultado del inciso A del apartado 6), el tipo de elemento de que se trate. 
+	De no identificar a un elemento como válido, se debe desplegar el mensaje: "Elemento no identificado" o "Elemento inválido". 
+
+CONSIDERACIONES:
+
+	Los comentarios que comienzan con punto y coma no se deben considerar, por lo que se deben eliminar.
+	Los separadores de elementos son: el espacio, los dos puntos y la coma.
+	Los siguientes elementos son compuestos: data segment, code segment, stack segment, byte ptr, word ptr, dup(xxx), [xxx], "xxxx", 'xxxx'. 
+	Estos no se deben separar y deben mostrarse de esa manera en la lista que despliega el programa.
+	De encontrarse equipos con programas iguales, se dividirá la calificación entre todos.
+	Para el caso de las instrucciones, tu programa no deberá identificar todas las instrucciones del procesador 8086, 
+	solo las de la línea 3 de las doce instrucciones, con base en la siguiente tabla. 
+
+	Es restricción del proyecto el que únicamente identifiquen las instrucciones asignadas, debiendo considerar como símbolos las instrucciones no asignadas.
+
+
+Np. Instrucciones a identificar
+									
+1	AAA 	LAHF 	POPF 	STC 	IMUL 	MUL 	ADD 	ADC 	JG 	JNA 	JNGE 	JA
+2	AAD 	CWD 	POPA 	STD 	INC 	NEG 	ADD 	AND 	JGE 	JNAE 	JP	LOOPNZ
+3	AAM 	CMPSB 	POPF 	STI 	INT 	NOT 	AND 	CMP 	JG 	JNB 	JNLE 	JA
+4	AAS 	CMPSW	NOP 	STOSB 	LEA 	POP 	CMP 	SHL 	JGE 	JNBE 	JNO 	LOOPZ
+5	CBW 	CWD 	PUSHA 	STOSW 	LDS 	PUSH 	MOV 	SUB 	JA 	JNC 	JNP 	JNL
+6	CLC 	DAA 	LAHF 	XLATB 	LEA 	IMUL 	MOV 	TEST 	JAE 	JNE 	JNO 	JA
+7	CLD 	DAS 	LODSB 	XLATB 	LES 	DEC 	OR 	SHL 	JB 	JL 	JNP 	JS
+8	CLI 	DAA 	LODSW 	PUSHF 	DEC 	DIV 	RCL 	XCHG 	JE 	JLE 	JNS 	JZ
+9	CMC 	DAS 	MOVSB 	RET 	IDIV 	DIV 	ROR 	TEST 	JBE 	JMP 	JNZ 	LOOP
+10	AAA 	HLT 	MOVSW	PUSHF 	IMUL 	IDIV 	SAR 	XCHG 	JC 	JL 	JO 	LOOPE
+11	AAD 	INTO 	NOP 	RET 	INC 	IMUL 	ADC 	XOR 	JCXZ 	JLE 	JNG 	LOOPNE
+12	CLD	IRET 	POPA 	SCASW 	DIV 	DEC 	ADC 	ADD 	JE 	JMP 	JO 	LOOPZ
+
+
+C) Identificación de líneas correctas e incorrectas de los segmentos de datos y pila
+
+En esta parte del proyecto se cubre la fase del análisis sintáctico y semántico de los segmentos de datos y pila, es decir, analizar los elementos que integran las líneas del programa fuente
+que se encuentran en las definiciones de los segmentos de datos y pila para verificar que son los correctos y que están en el orden correcto, conforme a la siguiente sintaxis.
+
+	data segment (pseudoinstrucción que identifica el inicio de la definición del segmento de datos)
+
+	símbolo db constante caracter
+	símbolo db constante numérica byte
+	símbolo db constante numérica palabra dup (constante caracter byte)
+	símbolo db constante numérica palabra dup (constante numérica byte)
+	símbolo dw constante numérica palabra
+	símbolo dw constante numérica palabra dup(constante numérica palabra)
+	símbolo equ constante numérica palabra
+	ends (pseudoinstrucción que identifica el fin de la definición de un segmento)
+
+	stack segment (pseudoinstrucción que identifica el inicio de la definición del segmento de pila)
+	
+	dw constante numérica palabra dup(constante numérica palabra)
+	ends (pseudoinstrucción que identifica el fin de la definición de un segmento)
+
+El proyecto debe cubrir la característica de desplegar la línea del programa fuente analizada y frente a ella el resultado de la verificación con la frase Correcta o Incorrecta, según sea el caso. 
+Para el caso en que la línea sea incorrecta, se deberá desplegar adicionalmente la causa del error. 
+
+D) Llenado de Tabla de símbolos
+
+	En esta fase del proyecto se debe comenzar a llenar la tabla de símbolos (considerar el llenado de los campos símbolo, tipo, valor y tamaño). 
+	Al finalizar el despliegue de las lineas del programa, se deberá desplegar la tabla de símbolos.
